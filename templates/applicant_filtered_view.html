@@ -1,0 +1,41 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Applicants</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<div class="container">
+<form method="GET" action="{% url 'filtered_applicant_list' %}">
+    <label for="category">Filter by Category:</label>
+    <select name="category" id="category">
+        <option value="">All</option>
+        <option value="1">Sales Department</option>
+        <option value="2">IT Department</option>
+        
+    </select>
+    <button type="submit">Filter</button>
+</form>
+    <div class="applicants">
+        {% for applicant in applicants %}
+            <div class="applicant">
+                <h2>ID:{{ applicant.id }}</h2>
+                <h2>{{ applicant.fullname }}</h2>
+                <h2>{{ applicant.email }}</h2>
+                <h2>{{ applicant.job }}</h2>
+                <h2>{{ applicant.description }}</h2>
+                <h2>{{ applicant.category }}</h2>
+            </div>
+           
+     
+        {% endfor %}
+    </div>
+    
+</div>
+</body>
+</html>

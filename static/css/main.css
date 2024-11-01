@@ -1,0 +1,26 @@
+body{
+    background-color: blanchedalmond;
+}
+
+
+
+.applicants{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    border-radius: 10px;
+    width: 500px;
+    gap: 20px;
+    padding: 10px;
+    border-collapse: collapse;
+}
+
+.applicant{
+    border-collapse: collapse;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+
+
+
+}
